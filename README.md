@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
 # Run and deploy your AI Studio app
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1MEo0z6RsrlS7_TKm8UtPeOmd_uav3bwy
-
 ## Run Locally
 
 **Prerequisites:**  Node.js
 
-
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+2. Set the `ollama model medgemma`.
 3. Run the app:
    `npm run dev`
+   <img width="1919" height="1029" alt="image" src="https://github.com/user-attachments/assets/c41faaa8-8c62-4ef0-ae78-8c93a66e4407" />
+
+5. Run the backend 
+   `uvicorn app.main:app --reload`
+<img width="1462" height="132" alt="image" src="https://github.com/user-attachments/assets/d62c1018-c359-47db-9e65-342e64729ab4" />
+
+   
+6. check the ollama 
+   `http://localhost:11434/`
+
+   <img width="1419" height="222" alt="image" src="https://github.com/user-attachments/assets/5e5ab964-b853-40c7-a355-0ddee57c38e5" />
+
+
+7. Chat with the Model
+<img width="1918" height="1030" alt="image" src="https://github.com/user-attachments/assets/b7d8b4d9-404e-429a-a039-491c0150afd1" />
