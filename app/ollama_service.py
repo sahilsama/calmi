@@ -1,5 +1,4 @@
 import os
-
 import requests
 from dotenv import load_dotenv
 
@@ -9,8 +8,13 @@ OLLAMA_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 MODEL = os.getenv("OLLAMA_MODEL", "alibayram/medgemma:latest")
 
 
-def generate_reply(system_prompt: str, history: list, new_message: str) -> str:
-    # Build the conversation string
+def generate_reply(
+    system_prompt: str,
+    history: list,
+    new_message: str,
+    json_mode: bool = False,
+) -> str:
+    # Build conversation history
     conversation = ""
     for msg in history:
         role = "User" if msg.role == "user" else "Assistant"
@@ -29,32 +33,33 @@ New User Message
 -------------
 User: {new_message}
 
-Assistant:"""
+Assistant:
+"""
 
     payload = {
         "model": MODEL,
         "prompt": full_prompt,
         "stream": False,
-        "options": {"temperature": 0.7, "num_predict": 250},
+        "options": {
+            "temperature": 0.3 if json_mode else 0.7,
+            "num_predict": 400,
+        },
     }
+
+    # ✅ Enable JSON mode only when requested
+    if json_mode:
+        payload["format"] = "json"
 
     try:
         response = requests.post(
-            f"{OLLAMA_URL}/api/generate", json=payload, timeout=30
+            f"{OLLAMA_URL}/api/generate",
+            json=payload,
+            timeout=60,
         )
         response.raise_for_status()
-        return (
-            response.json()
-            .get(
-                "response",
-                "I'm sorry, I'm having trouble processing that right now.",
-            )
-            .strip()
-        )
+
+        return response.json().get("response", "").strip()
+
     except Exception as e:
         print(f"Ollama Error: {e}")
-        return (
-            "I'm here, but I'm having a little trouble connecting to my thoughts. "
-            "Could you try saying that again?"
-        )
-
+        return ""

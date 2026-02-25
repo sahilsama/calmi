@@ -31,12 +31,13 @@ This contains everything you need to run your app locally.
 
 
 updates:
-- soothing games, book, song, movies recommendations.
-- medication whatsapp reminders
-- mood journaling
-- frontend
+- soothing games, book, song, movies recommendations - X
+- medication whatsapp reminders - X
+- mood journaling -  done
+- frontend - done
 
 small updates:
 - stats and image update support groups images
-- soothing sound
-- 
+- soothing sound 
+- Journal → mood → music intelligence
+- Spotify button per card

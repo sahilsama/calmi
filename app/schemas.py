@@ -22,3 +22,7 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     reply: str
 
+
+class MusicRequest(BaseModel):
+    profile: dict
+
