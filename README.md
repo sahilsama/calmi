@@ -32,6 +32,6 @@ This contains everything you need to run your app locally.
 
 updates:
 - soothing games, book, song, movies recommendations.
-- medication reminders
+- medication whatsapp reminders
 - mood journaling
 - frontend
