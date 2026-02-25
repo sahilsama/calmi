@@ -27,3 +27,11 @@ This contains everything you need to run your app locally.
 
 7. Chat with the Model
 <img width="1918" height="1030" alt="image" src="https://github.com/user-attachments/assets/b7d8b4d9-404e-429a-a039-491c0150afd1" />
+
+
+
+updates:
+- soothing games, book, song, movies recommendations.
+- medication reminders
+- mood journaling
+- frontend
