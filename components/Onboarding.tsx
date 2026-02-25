@@ -20,8 +20,28 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
   const steps = [
     {
-      title: "Welcome to Calmi",
-      description: "A space to breathe and be heard. What should I call you?",
+      title: "Welcome to Yellow",
+      description: (
+        <>
+          <div className="">
+            <p>
+              A space to breathe and be heard. <b>What should I call you?</b>
+            </p>
+            <br />
+            <p>
+              We created Calmi because life can be… a lot.
+            </p>
+            <br />
+            <p>
+              Sometimes you just need someone to talk to.
+            </p>
+            <br />
+            <p>
+              Whether you're navigating a rough day, figuring things out, or just need a moment to breathe.
+            </p>
+          </div>
+        </>
+      ),
       component: (
         <input
           type="text"
