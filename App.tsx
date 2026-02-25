@@ -7,6 +7,7 @@ import Onboarding from "./components/Onboarding";
 import ChatInterface from "./components/ChatInterface";
 import VoiceMode from "./components/VoiceMode";
 import JournalInterface from "./components/JournalInterface";
+import MusicInterface from "./components/MusicInterface";
 
 type View = "landing" | "onboarding" | "chat";
 
@@ -28,6 +29,9 @@ const App: React.FC = () => {
 
       case "journal":
         return <JournalInterface profile={profile} />;
+
+      case "music":
+        return <MusicInterface profile={profile} />;
 
       case "text":
       default:

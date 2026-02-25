@@ -101,7 +101,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ profile }) => {
             </svg>
           </div>
           <div>
-            <h2 className="font-serif-display text-xl text-stone-800">Calmi</h2>
+            <h2 className="font-serif-display text-xl text-stone-800">Yellow</h2>
             <div className="flex items-center gap-1.5">
               <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
               <span className="text-[10px] text-stone-400 uppercase tracking-widest font-semibold">
@@ -218,7 +218,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ profile }) => {
       {/* Shared Footer Disclaimer */}
       <div className="px-6 py-4 bg-white/80 backdrop-blur-md border-t border-stone-50">
         <p className="text-[10px] text-stone-400 text-center uppercase tracking-widest font-medium">
-          Calmi is a supportive space, not a medical service.
+          Yellow is a supportive space, not a medical service.
         </p>
       </div>
     </div>

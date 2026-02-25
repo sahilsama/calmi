@@ -242,9 +242,9 @@ const VoiceMode: React.FC<VoiceModeProps> = ({ profile }) => {
       <div className="text-center space-y-4 max-w-sm">
         <h3 className="font-serif-display text-3xl text-stone-800 h-10">
           {error ? "Voice Support Paused" : 
-           isConnecting ? "Connecting to Calmi..." :
-           isCalmiSpeaking ? "Calmi is speaking..." : 
-           isActive ? "Calmi is listening..." : 
+           isConnecting ? "Connecting to Yellow..." :
+           isCalmiSpeaking ? "Yellow is speaking..." : 
+           isActive ? "Yellow is listening..." : 
            "Ready to talk?"}
         </h3>
         
@@ -280,7 +280,7 @@ const VoiceMode: React.FC<VoiceModeProps> = ({ profile }) => {
               <span>End Voice Session</span>
             </>
           ) : (
-            <span>Start Calmi Voice</span>
+            <span>Start Yellow Voice</span>
           )}
         </button>
       </div>

@@ -219,6 +219,30 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
               time.
             </div>
           </button>
+
+          <button
+            onClick={() =>
+              setProfile({ ...profile, communicationPreference: "music" })
+            }
+            className={`p-6 rounded-xl text-left border-2 transition-all ${
+              profile.communicationPreference === "music"
+                ? "border-stone-800 bg-stone-800 text-white"
+                : "border-stone-200 hover:border-stone-400"
+            }`}
+          >
+            <div className="font-semibold mb-1 text-lg">
+              Music for my mood
+            </div>
+            <div
+              className={`text-sm ${
+                profile.communicationPreference === "music"
+                  ? "text-stone-300"
+                  : "text-stone-500"
+              }`}
+            >
+              Emotionally aware AI-generated music recommendations.
+            </div>
+          </button>
         </div>
       ),
     },
