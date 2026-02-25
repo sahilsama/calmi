@@ -35,3 +35,8 @@ updates:
 - medication whatsapp reminders
 - mood journaling
 - frontend
+
+small updates:
+- stats and image update support groups images
+- soothing sound
+- 

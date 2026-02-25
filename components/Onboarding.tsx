@@ -1,7 +1,12 @@
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { UserProfile, AgeRange, RelationshipStatus, SupportType, CommunicationPreference } from '../types';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  UserProfile,
+  AgeRange,
+  RelationshipStatus,
+  SupportType,
+  CommunicationPreference,
+} from "../types";
 
 interface OnboardingProps {
   onComplete: (profile: UserProfile) => void;
@@ -10,12 +15,12 @@ interface OnboardingProps {
 const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
   const [step, setStep] = useState(0);
   const [profile, setProfile] = useState<Partial<UserProfile>>({
-    name: '',
-    identity: '',
-    ageRange: '25–34',
-    relationshipStatus: 'Single',
-    supportType: 'something else',
-    communicationPreference: 'text'
+    name: "",
+    identity: "",
+    ageRange: "25–34",
+    relationshipStatus: "Single",
+    supportType: "something else",
+    communicationPreference: "text",
   });
 
   const steps = [
@@ -28,16 +33,13 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
               A space to breathe and be heard. <b>What should I call you?</b>
             </p>
             <br />
-            <p>
-              We created Calmi because life can be… a lot.
-            </p>
+            <p>We created Calmi because life can be… a lot.</p>
+            <br />
+            <p>Sometimes you just need someone to talk to.</p>
             <br />
             <p>
-              Sometimes you just need someone to talk to.
-            </p>
-            <br />
-            <p>
-              Whether you're navigating a rough day, figuring things out, or just need a moment to breathe.
+              Whether you're navigating a rough day, figuring things out, or
+              just need a moment to breathe.
             </p>
           </div>
         </>
@@ -51,7 +53,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
           onChange={(e) => setProfile({ ...profile, name: e.target.value })}
           autoFocus
         />
-      )
+      ),
     },
     {
       title: "How do you identify?",
@@ -65,64 +67,91 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
           onChange={(e) => setProfile({ ...profile, identity: e.target.value })}
           autoFocus
         />
-      )
+      ),
     },
     {
       title: "How old are you?",
       description: "This helps me frame our conversation better.",
       component: (
         <div className="grid grid-cols-2 gap-3 text-black">
-          {(['under 18', '18–24', '25–34', '35+'] as AgeRange[]).map((range) => (
-            <button
-              key={range}
-              onClick={() => setProfile({ ...profile, ageRange: range })}
-              className={`p-4 rounded-xl text-left border-2 transition-all ${
-                profile.ageRange === range ? 'border-stone-800 bg-stone-800 text-white' : 'border-stone-200 hover:border-stone-400'
-              }`}
-            >
-              {range}
-            </button>
-          ))}
+          {(["under 18", "18–24", "25–34", "35+"] as AgeRange[]).map(
+            (range) => (
+              <button
+                key={range}
+                onClick={() => setProfile({ ...profile, ageRange: range })}
+                className={`p-4 rounded-xl text-left border-2 transition-all ${
+                  profile.ageRange === range
+                    ? "border-stone-800 bg-stone-800 text-white"
+                    : "border-stone-200 hover:border-stone-400"
+                }`}
+              >
+                {range}
+              </button>
+            ),
+          )}
         </div>
-      )
+      ),
     },
     {
       title: "Relationship status?",
       description: "Our connections shape our world.",
       component: (
         <div className="grid grid-cols-2 gap-3 text-black">
-          {(['Single', 'In a relationship', 'Situationship', 'Married', 'Divorced/Separated', 'Widowed'] as RelationshipStatus[]).map((status) => (
+          {(
+            [
+              "Single",
+              "In a relationship",
+              "Situationship",
+              "Married",
+              "Divorced/Separated",
+              "Widowed",
+            ] as RelationshipStatus[]
+          ).map((status) => (
             <button
               key={status}
-              onClick={() => setProfile({ ...profile, relationshipStatus: status })}
+              onClick={() =>
+                setProfile({ ...profile, relationshipStatus: status })
+              }
               className={`p-3 rounded-xl text-left border-2 transition-all text-sm ${
-                profile.relationshipStatus === status ? 'border-stone-800 bg-stone-800 text-white' : 'border-stone-200 hover:border-stone-400'
+                profile.relationshipStatus === status
+                  ? "border-stone-800 bg-stone-800 text-white"
+                  : "border-stone-200 hover:border-stone-400"
               }`}
             >
               {status}
             </button>
           ))}
         </div>
-      )
+      ),
     },
     {
       title: "What brings you here today?",
       description: "Select the area where you need the most support.",
       component: (
         <div className="grid grid-cols-1 gap-3 text-black">
-          {(['anxiety', 'depression', 'relationships', 'loneliness', 'something else'] as SupportType[]).map((type) => (
+          {(
+            [
+              "anxiety",
+              "depression",
+              "relationships",
+              "loneliness",
+              "something else",
+            ] as SupportType[]
+          ).map((type) => (
             <button
               key={type}
               onClick={() => setProfile({ ...profile, supportType: type })}
               className={`p-4 rounded-xl text-left border-2 transition-all capitalize ${
-                profile.supportType === type ? 'border-stone-800 bg-stone-800 text-white' : 'border-stone-200 hover:border-stone-400'
+                profile.supportType === type
+                  ? "border-stone-800 bg-stone-800 text-white"
+                  : "border-stone-200 hover:border-stone-400"
               }`}
             >
               {type}
             </button>
           ))}
         </div>
-      )
+      ),
     },
     {
       title: "How shall we talk?",
@@ -130,26 +159,69 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
       component: (
         <div className="grid grid-cols-1 gap-3 text-black">
           <button
-            onClick={() => setProfile({ ...profile, communicationPreference: 'text' })}
+            onClick={() =>
+              setProfile({ ...profile, communicationPreference: "text" })
+            }
             className={`p-6 rounded-xl text-left border-2 transition-all ${
-              profile.communicationPreference === 'text' ? 'border-stone-800 bg-stone-800 text-white' : 'border-stone-200 hover:border-stone-400'
+              profile.communicationPreference === "text"
+                ? "border-stone-800 bg-stone-800 text-white"
+                : "border-stone-200 hover:border-stone-400"
             }`}
           >
             <div className="font-semibold mb-1 text-lg">Text Conversation</div>
-            <div className={`text-sm ${profile.communicationPreference === 'text' ? 'text-stone-300' : 'text-stone-500'}`}>Reflective, quiet, and written.</div>
+            <div
+              className={`text-sm ${profile.communicationPreference === "text" ? "text-stone-300" : "text-stone-500"}`}
+            >
+              Reflective, quiet, and written.
+            </div>
           </button>
           <button
-            onClick={() => setProfile({ ...profile, communicationPreference: 'voice' })}
+            onClick={() =>
+              setProfile({ ...profile, communicationPreference: "voice" })
+            }
             className={`p-6 rounded-xl text-left border-2 transition-all ${
-              profile.communicationPreference === 'voice' ? 'border-stone-800 bg-stone-800 text-white' : 'border-stone-200 hover:border-stone-400'
+              profile.communicationPreference === "voice"
+                ? "border-stone-800 bg-stone-800 text-white"
+                : "border-stone-200 hover:border-stone-400"
             }`}
           >
             <div className="font-semibold mb-1 text-lg">Voice Conversation</div>
-            <div className={`text-sm ${profile.communicationPreference === 'voice' ? 'text-stone-300' : 'text-stone-500'}`}>Warm, real-time, and spoken.</div>
+            <div
+              className={`text-sm ${profile.communicationPreference === "voice" ? "text-stone-300" : "text-stone-500"}`}
+            >
+              Warm, real-time, and spoken.
+            </div>
+          </button>
+
+          {/* Journaling */}
+          <button
+            onClick={() =>
+              setProfile({ ...profile, communicationPreference: "journal" })
+            }
+            className={`p-6 rounded-xl text-left border-2 transition-all ${
+              profile.communicationPreference === "journal"
+                ? "border-stone-800 bg-stone-800 text-white"
+                : "border-stone-200 hover:border-stone-400"
+            }`}
+          >
+            <div className="font-semibold mb-1 text-lg">
+              Mood Journaling
+            </div>
+
+            <div
+              className={`text-sm ${
+                profile.communicationPreference === "journal"
+                  ? "text-stone-300"
+                  : "text-stone-500"
+              }`}
+            >
+              Track moods, write freely, and visualize emotional patterns over
+              time.
+            </div>
           </button>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
   const handleNext = () => {
@@ -192,9 +264,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
               </p>
             </div>
 
-            <div className="py-4">
-              {steps[step].component}
-            </div>
+            <div className="py-4">{steps[step].component}</div>
 
             <div className="flex justify-between items-center pt-8">
               <div className="flex gap-1">
@@ -202,22 +272,22 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   <div
                     key={i}
                     className={`h-1 rounded-full transition-all duration-300 ${
-                      i <= step ? 'bg-stone-800 w-8' : 'bg-stone-200 w-4'
+                      i <= step ? "bg-stone-800 w-8" : "bg-stone-200 w-4"
                     }`}
                   />
                 ))}
               </div>
-              
+
               <button
                 onClick={handleNext}
                 disabled={isNextDisabled()}
                 className={`px-8 py-3 rounded-full font-medium transition-all ${
                   isNextDisabled()
-                    ? 'bg-stone-100 text-stone-400 cursor-not-allowed'
-                    : 'bg-stone-800 text-white hover:bg-stone-700 active:scale-95 shadow-lg shadow-stone-200'
+                    ? "bg-stone-100 text-stone-400 cursor-not-allowed"
+                    : "bg-stone-800 text-white hover:bg-stone-700 active:scale-95 shadow-lg shadow-stone-200"
                 }`}
               >
-                {step === steps.length - 1 ? 'Begin' : 'Continue'}
+                {step === steps.length - 1 ? "Begin" : "Continue"}
               </button>
             </div>
           </motion.div>

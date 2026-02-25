@@ -34,7 +34,7 @@ export default function Landing({ onStart }: Props) {
                 title="Check in with yourself"
                 description="Short, grounded conversations that start where you actually are."
               >
-                Calmi opens with a warm, context-aware check-in based on your profile and
+                Yellow opens with a warm, context-aware check-in based on your profile and
                 recent sessions. It reflects your words back to you and gently nudges you
                 into deeper clarity without feeling clinical.
               </AccordionItem>
@@ -44,7 +44,7 @@ export default function Landing({ onStart }: Props) {
                 title="Hold onto what matters"
                 description="Session-aware memory keeps important threads from getting lost."
               >
-                Each conversation is saved in a private local database. Calmi remembers
+                Each conversation is saved in a private local database. Yellow remembers
                 themes, people, and patterns you’ve mentioned, so future chats can pick up
                 where you left off instead of starting from zero.
               </AccordionItem>
@@ -54,7 +54,7 @@ export default function Landing({ onStart }: Props) {
                 title="Stay grounded, stay safe"
                 description="Built-in safety checks for crisis language and escalation hints."
               >
-                Messages are scanned for high-risk language. When needed, Calmi pauses the
+                Messages are scanned for high-risk language. When needed, yellow pauses the
                 regular flow and gently encourages real-world support like friends, family,
                 or professional help, while reminding you that you matter.
               </AccordionItem>
@@ -65,7 +65,7 @@ export default function Landing({ onStart }: Props) {
                 description="Powered by Ollama, tuned for emotional conversations."
               >
                 All generation happens locally through Ollama, so your words stay with you.
-                You choose the model, and Calmi wraps it in a therapist-like persona that
+                You choose the model, and yellow wraps it in a therapist-like persona that
                 is warm, reflective, and under 150 words per reply.
               </AccordionItem>
               <AccordionItem
@@ -74,7 +74,7 @@ export default function Landing({ onStart }: Props) {
                 description="Powered by Ollama, tuned for emotional conversations."
               >
                 All generation happens locally through Ollama, so your words stay with you.
-                You choose the model, and Calmi wraps it in a therapist-like persona that
+                You choose the model, and Yellow wraps it in a therapist-like persona that
                 is warm, reflective, and under 150 words per reply.
               </AccordionItem>
             </Accordion>
@@ -84,7 +84,7 @@ export default function Landing({ onStart }: Props) {
             <div className="h-full rounded-3xl bg-[#f5f0e8] flex items-center justify-center p-6">
               <img
                 src="/dashboard.png"
-                alt="Calmi dashboard preview"
+                alt="Yellow dashboard preview"
                 className="w-full h-auto max-h-[480px] object-contain rounded-2xl shadow-2xl"
               />
             </div>

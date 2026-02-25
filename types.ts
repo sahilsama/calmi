@@ -5,7 +5,7 @@ export type RelationshipStatus = 'Single' | 'In a relationship' | 'Situationship
 
 export type SupportType = 'anxiety' | 'depression' | 'relationships' | 'loneliness' | 'something else';
 
-export type CommunicationPreference = 'text' | 'voice';
+export type CommunicationPreference = 'text' | 'voice' | 'journal';
 
 export interface UserProfile {
   name: string;
